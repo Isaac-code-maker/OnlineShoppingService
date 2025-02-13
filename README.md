@@ -1,7 +1,3 @@
-Ah, sim! O projeto que você estava começando era um serviço de compras online, com foco em arquitetura de software e boas práticas. Vou criar um README para ele com base nesse contexto. 
-
-Aqui está uma sugestão de como poderia ser:
-
 ---
 
 # Web Shopping Service
