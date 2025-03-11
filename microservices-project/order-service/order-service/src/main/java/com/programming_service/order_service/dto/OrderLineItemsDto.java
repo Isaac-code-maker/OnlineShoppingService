@@ -1,21 +1,18 @@
 package com.programming_service.order_service.dto;
 
 import java.math.BigDecimal;
-import java.util.List;
-
-import com.programming_service.order_service.models.OrderLineItems;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class OrderLineItemsDto {
-
-    private Long id;
+    // Campo para armazenar o código SKU do item (Stock Keeping Unit)
     private String skuCode;
+    // Campo para armazenar o preço do item
     private BigDecimal price;
+    // Campo para armazenar a quantidade do item
     private int quantity;
-    private List<OrderLineItems> orderLineItemsList;
-
 }

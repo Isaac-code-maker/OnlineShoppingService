@@ -2,6 +2,7 @@ package com.programming_service.order_service.services;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -21,20 +22,17 @@ public class OrderServices {
     public void placeOrder(OrderRequest orderRequest) {
         
         Order order = new Order();
-
         order.setOrderNumber(UUID.randomUUID().toString());
 
-                List<OrderLineItems> orderLineItems = orderRequest.getOrderLineItemsDtoList()
+        List<OrderLineItems> orderLineItems = orderRequest.getOrderLineItemsDtoList()
                 .stream()
                 .map(this::mapToDto)
-                .toList();
+                .collect(Collectors.toList());
         order.setOrderLineItems(orderLineItems);
-       orderRepository.save(order); 
-         
+        orderRepository.save(order); 
     }
 
     private OrderLineItems mapToDto(OrderLineItemsDto orderLineItemsDto) {
-
         OrderLineItems orderLineItems = new OrderLineItems();
         orderLineItems.setSkuCode(orderLineItemsDto.getSkuCode());
         orderLineItems.setPrice(orderLineItemsDto.getPrice());
