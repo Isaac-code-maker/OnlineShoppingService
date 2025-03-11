@@ -5,6 +5,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.programming_service.order_service.dto.OrderLineItemsDto;
 import com.programming_service.order_service.dto.OrderRequest;
@@ -17,6 +18,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 // Anotação Lombok para gerar um construtor com argumentos para todos os campos finais
 @RequiredArgsConstructor
+@Transactional
 public class OrderServices {
     
     // Repositório de pedidos, injetado automaticamente pelo Spring
